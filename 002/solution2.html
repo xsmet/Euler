@@ -1,0 +1,27 @@
+<html>
+<script language="JavaScript">
+a=1;
+b=2; /* evensum=2 in het begin */
+max=4000000;
+// a=1, b=2, max=100  ----> 44
+// a=1, b=2, max=1000 ----> 798
+// a=1, b=2, max=4e6  ----> 4613732
+
+/* Code below */
+evensum=b;
+for (c=0; c < max;) {
+	c=a+b;
+	document.write(c+', ');
+	a=b;
+	b=c;
+	
+	if (c % 2 == 0 && c <= max)
+	evensum += c;
+}
+/* End code */
+
+</script>
+<body>
+<script>document.write('Answer='+evensum);</script>
+</body>
+</html>

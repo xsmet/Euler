@@ -1,0 +1,44 @@
+<html>
+<script language="JavaScript">
+n=600851475143;
+// n=13195  ----> Max=114 -- 5, 7, 13, 29 -- 29
+// n=600851475143  ----> Max=775146 -- 71, 839, 1471, 6857 -- 6857
+
+/* Code below */
+max=Math.floor(Math.sqrt(n));
+document.write('Limit: sqrt(n)='+max+'<p>');
+
+// Maak een lijst met alle kandidaat-priemgetallen (waarde 1)
+arr=[];
+for (i=2; i <= max; i++) arr[i]=1;
+
+// Voor elke zulke kandidaat, schrap zijn veelvouden uit de lijst
+for (i=2; i <= max; i++) {
+	// Veelvouden markeren als NIET priem
+	for(j=2*i; j <= max; j+=i) arr[j]=0;
+}
+
+// Druk de priemgetallen af, en sla ze op in een nieuwe lijst
+primes=[];
+for (i=2; i <= max; i++) 
+	if (arr[i]==1) {
+		document.write(i+', ');
+		primes[primes.length]=i;
+	}
+document.write('<p>');
+
+// Test of elk priemgetal een deler is van n
+divs=[];
+for (i=0; i < primes.length; i++)
+	if (n/primes[i] == Math.floor(n/primes[i])) {
+		document.write(primes[i]+', ');
+		divs[divs.length]=primes[i];
+	}
+		
+/* End code */
+
+</script>
+<body>
+<script>document.write('<p>Answer='+divs[divs.length-1]);</script>
+</body>
+</html>

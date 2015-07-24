@@ -1,0 +1,30 @@
+<html>
+<script language="JavaScript">
+idx=10001;
+
+/* Code below */
+
+// Maak een lijst met alle kandidaat-priemgetallen (waarde 1)
+max=1000000;
+arr=[];
+for (i=2; i <= max; i++) arr[i]=1;
+
+// Voor elke zulke kandidaat, schrap zijn veelvouden uit de lijst
+for (i=2; i <= max; i++) {
+	// Veelvouden markeren als NIET priem -- enkel degene die nog priem-kandidaat zijn
+	if (arr[i]==1)
+	for(j=2*i; j <= max; j+=i) arr[j]=0;
+}
+
+// Druk de priemgetallen af, en sla ze op in een nieuwe lijst
+primes=[];
+for (i=2; i <= max; i++) 
+	if (arr[i]==1)
+		primes[primes.length]=i;
+
+</script>
+<body>
+<script>document.write('<p>Answer='+primes[idx-1]);</script>
+<script>document.write('Er zijn '+primes.length+' priemgetallen berekend.');</script>
+</body>
+</html>

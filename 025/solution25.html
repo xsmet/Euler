@@ -1,0 +1,26 @@
+<html>
+<script language="JavaScript">
+a=1;
+b=2; /* evensum=2 in het begin */
+len=1000;
+// a=1, b=2, max=100  ----> 44
+// a=1, b=2, max=1000 ----> 798
+// a=1, b=2, max=4e6  ----> 4613732
+
+/* Code below */
+idx=3;
+for (c=0; c < Math.pow(10,len-1);) {
+	c=a+b;
+	idx++;
+	document.write(c+', ');
+	a=b;
+	b=c;
+}
+/* End code */
+
+</script>
+<body>
+<script>document.write('Answer='+idx);</script>
+OVERFLOW...
+</body>
+</html>

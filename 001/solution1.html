@@ -1,0 +1,21 @@
+<html>
+<script language="JavaScript">
+n1=3;
+n2=5;
+max=1000;
+// n1=3, n2=5, max=10  ----> 23
+// n1=3, n2=5, max=1000 ---> 233168
+
+/* Code below */
+sum=0;
+for (i = 0; i < max; i++) {
+	if (i % n1 == 0 || i % n2 == 0)
+	sum += i;
+}
+/* End code */
+
+</script>
+<body>
+<script>document.write('Answer='+sum);</script>
+</body>
+</html>
