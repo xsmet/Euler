@@ -1,0 +1,32 @@
+<html>
+<script language="JavaScript">
+n=3;
+
+// n=2 --> 91*99 = 9009
+// n=3 --> ?
+
+/* Code below */
+
+function TestPalindrome(str) {
+	return str == str.split('').reverse().join('');
+}
+
+i=Math.pow(10,n) - 1;
+j=i;
+floor=(i+1)/10;
+
+stop=false;
+for (; i>floor ; i--) {
+	for (; j>floor ; j--) {
+		if (TestPalindrome((i*j).toString())) { stop=true; break; }
+		if (i*j == 3696309) { stop=true; break; }
+	}
+	if (stop) { break; }
+}
+/* End code */
+
+</script>
+<body>
+<script>document.write('Answer='+(i*j) + ' (='+i+'*'+j+')');</script>
+</body>
+</html>
