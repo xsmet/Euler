@@ -11,22 +11,22 @@ function TestPalindrome(str) {
 	return str == str.split('').reverse().join('');
 }
 
-i=Math.pow(10,n) - 1;
-j=i;
-floor=(i+1)/10;
-
-stop=false;
-for (; i>floor ; i--) {
-	for (; j>floor ; j--) {
-		if (TestPalindrome((i*j).toString())) { stop=true; break; }
-		if (i*j == 3696309) { stop=true; break; }
+maxnum=Math.pow(Math.pow(10,n)-1,2);
+minnum=Math.pow(Math.pow(10,n-1),2);
+candidate=maxnum;
+div=0;
+for (; candidate > minnum; candidate--) {
+	stop=false;
+	if (TestPalindrome(candidate.toString())) {
+		for (i=Math.pow(10,n)-1; i >= Math.pow(10,n-1); i--)
+			if (candidate % i == 0) // Als i een deler is van candidate
+				if (candidate / i < Math.pow(10,n)) {// ... en candidate/i niet te groot is
+					div=i; stop=true; break; 
+				}
+			
+		
 	}
-	if (stop) { break; }
+	if (stop) { document.write(candidate + ', ' + i); break ;}
 }
-/* End code */
-
 </script>
-<body>
-<script>document.write('Answer='+(i*j) + ' (='+i+'*'+j+')');</script>
-</body>
 </html>
