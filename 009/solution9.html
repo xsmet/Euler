@@ -1,0 +1,29 @@
+<html>
+<script language="JavaScript">
+
+n=1000;
+// Solution: 200^2 + 375^2 == 425^2
+//           --> a=200, b=375, c=425
+//           --> abc = 31875000
+
+function TestPythagoreanTriplet(a,b,c) {
+	return Math.pow(a,2) + Math.pow(b,2) == Math.pow(c,2);
+}
+
+a=0; b=0;
+amax=Math.ceil(n/3-1);
+bmax=2*amax;
+
+stop=false;
+for (a=1; a<=amax && !stop; a++)
+	for (b=a+1; b<=bmax; b++) {
+		if ( TestPythagoreanTriplet(a,b,n-a-b) ) {
+			prod=a*b*(n-a-b);
+			stop=true; break;
+		}
+	}
+
+document.write('<p>Answer='+prod);
+</script>
+</body>
+</html>
