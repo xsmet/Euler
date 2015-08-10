@@ -1,4 +1,7 @@
 # Euler
+
+![xsmet on Project Euler](https://projecteuler.net/profile/xsmet.png)
+
 Code for [ProjectEuler.net problems - Math & Algorithmic challenges](https://projecteuler.net/progress=xsmet)
 
 Problems are solved in the language I deem most appropriate or want to practice. Usual suspects include but are not limited to
